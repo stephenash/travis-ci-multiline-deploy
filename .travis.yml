@@ -1,0 +1,25 @@
+language: node_js
+os:
+  - linux
+  - osx
+  
+script:
+  - |
+    echo building
+    if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+      echo "****> linux <****";
+    elif [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+      echo "----> osx <----";
+    fi
+
+deploy:
+  provider: script
+  on:
+    all_branches: true
+  script: |
+    echo deploying
+    if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+      echo "****> linux <****";
+    elif [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+      echo "----> osx <----";
+    fi
